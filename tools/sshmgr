@@ -1,0 +1,41 @@
+#ssh key manager package
+
+import sys
+import os
+
+arg_options = ['-c', '-d']
+
+argument_selection = []
+
+def arguments(system_arguments):
+
+    for option in arg_options:
+        if option in system_arguments:
+
+            index = system_arguments.index(option)
+
+            option = system_arguments[index]
+            
+            argument_selection.append(option)
+    
+    if len(argument_selection) == 0:
+        print("""
+                SSH KEY MANAGER
+                This package is used to manage ssh keys stored in a users ~/.ssh folder
+                The protocal is: ed25519
+                
+            """)
+
+
+
+arguments(sys.argv)
+
+email = input("Enter your email: ")
+
+def create_ssh():
+    os.system(f"ssh-keygen -t ed25519 -C {email}")
+
+
+
+if '-c' in argument_selection:
+    create_ssh()
