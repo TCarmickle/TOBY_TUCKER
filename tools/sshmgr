@@ -31,11 +31,15 @@ def arguments(system_arguments):
 arguments(sys.argv)
 
 email = input("Enter your email: ")
+protocol = input("Enter protocol:[ed25519] ")
+
+if len(protocol) == 0:
+    protocol = 'ed25519'
 
 def create_ssh():
-    os.system(f"ssh-keygen -t ed25519 -C {email}")
+    os.system(f"ssh-keygen -t {protocol} -C {email}")
 
-
+os.system('cat ~/.ssh/id_ed25519')
 
 if '-c' in argument_selection:
     create_ssh()
