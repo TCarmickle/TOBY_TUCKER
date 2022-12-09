@@ -1,7 +1,1 @@
-def function():
-    if 1 == 2:
-        print('Weird')
-    else:
-        print('Not weird')
-
-function()
+Who goes there?!
