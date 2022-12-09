@@ -1,0 +1,13 @@
+#Add all the odd numbers together and display the outcome
+#use modulus to remove even numbers 
+
+for i in {1..20}
+do
+	if expr $i % 2 != 0 >null
+	then
+		total=$((total + i))
+	fi
+done
+echo $total
+
+
